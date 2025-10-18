@@ -1,0 +1,32 @@
+.ant-form-item-label >label{
+    font-weight: 600;
+    font-family: 'Open Sans';
+}
+
+.ant-input-outlined:hover{
+    border-color: #144A6C !important;
+}
+
+.ant-input-outlined:focus,
+.ant-input-outlined:focus-within {
+  border-color: #144A6C !important;
+  box-shadow: 0 0 0 2px rgba(20, 74, 108, 0.14) !important; /* replace blue ring */
+  outline: none !important;
+}
+
+/* ---- Affix Wrapper (prefix/suffix & Password) ---- */
+.ant-input-affix-wrapper:hover {
+  border-color: #144A6C !important;
+}
+.ant-input-affix-wrapper-focused {
+  border-color: #144A6C !important;
+  box-shadow: 0 0 0 2px rgba(20, 74, 108, 0.14) !important; /* replace blue ring */
+  outline: none !important;
+}
+
+/* Extra safety for the inner input */
+.ant-input:focus,
+.ant-input:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
