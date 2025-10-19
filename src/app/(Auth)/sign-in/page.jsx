@@ -70,11 +70,11 @@ export default function LoginPage() {
           </Link>
         </div>
 
-        <AuthButton htmlType="submit" loading={loading} text="Sign In">
+        <Link href="/"><AuthButton htmlType="submit" loading={loading} text="Sign In">
           
-        </AuthButton>
+        </AuthButton></Link>
 
-        <p className="mt-4 text-[12px] leading-relaxed text-[#6b7280] ">
+        <p className="mt-4 text-[12px] leading-relaxed text-[#9F9C96] ">
           By joining, you agree to the{' '}
           <a className="!text-[#8BCF9A] hover:underline" href="#">
             Terms of Service

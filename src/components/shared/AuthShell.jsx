@@ -41,11 +41,11 @@ export default function AuthShell({
 
             <div className="mb-6 flex items-start justify-between">
               <div>
-                <h1 className="text-[#0c1323] text-[22px] sm:text-2xl font-bold font-open-sans">
+                <h1 className="text-[#333333] text-[22px] sm:text-2xl font-bold font-open-sans">
                   {title}
                 </h1>
                 {subtitle ? (
-                  <p className="text-[13px] sm:text-sm text-[#6b7280] mt-1 font-open-sans">{subtitle}</p>
+                  <p className="text-[13px] sm:text-sm text-[#9F9C96] mt-1 font-open-sans">{subtitle}</p>
                 ) : null}
               </div>
               {rightHeaderExtra}

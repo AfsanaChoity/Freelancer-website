@@ -5,6 +5,10 @@ import AuthShell from '@/components/shared/AuthShell';
 import AuthButton from '@/components/ui/AuthButton';
 import { LockOutlined } from '@ant-design/icons';
 import { useState } from 'react';
+import '@/styles/Auth.css'
+import Link from 'next/link';
+
+
 
 export default function ResetPasswordPage() {
   const [form] = Form.useForm();
@@ -27,7 +31,7 @@ export default function ResetPasswordPage() {
   return (
     <AuthShell
       title="Reset Password"
-      subtitle="Your password must be 8–16 characters long & include a number."
+      subtitle="Your password must 8-10 character long & 1 uppercase & lowercase ."
       
       backHref="/verify-code"
     >
@@ -55,9 +59,13 @@ export default function ResetPasswordPage() {
           <Input.Password size="large" prefix={<LockOutlined />} placeholder="Confirm password" />
         </Form.Item>
 
-        <AuthButton htmlType="submit" loading={loading}>
-          Save Changes
+       <div className='md:pt-6'>
+        <Link href="/sign-in">
+         <AuthButton htmlType="submit" loading={loading} text="Save Changes">
+          
         </AuthButton>
+        </Link>
+       </div>
       </Form>
     </AuthShell>
   );

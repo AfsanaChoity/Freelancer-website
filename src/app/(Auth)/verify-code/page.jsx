@@ -4,6 +4,7 @@ import { Form, Input, message } from 'antd';
 import AuthShell from '@/components/shared/AuthShell';
 import AuthButton from '@/components/ui/AuthButton';
 import { useRef, useState } from 'react';
+import Link from 'next/link';
 
 export default function VerifyCodePage() {
   const [form] = Form.useForm();
@@ -20,7 +21,7 @@ export default function VerifyCodePage() {
     setLoading(true);
     try {
       // TODO: verify code
-      message.success('Code verified (demo)');
+      message.success('Code verified successfully.');
     } finally {
       setLoading(false);
     }
@@ -29,30 +30,41 @@ export default function VerifyCodePage() {
   return (
     <AuthShell
       title="Verify Code"
-      subtitle="Please check your email and enter the 6-digit code."
-      
+      subtitle="Please check your email and enter the code."
+
       backHref="/forgot-password"
     >
       <Form form={form} layout="vertical" requiredMark={false} onFinish={onFinish}>
         <div className="mb-6 flex gap-3">
-          {Array.from({ length: 6 }).map((_, i) => (
+          {Array.from({ length: 5 }).map((_, i) => (
             <Input
               key={i}
               size="large"
               maxLength={1}
-              className="h-11 w-11 text-center rounded-lg"
+              bordered={false}
+              className="h-11 w-11 text-center  !rounded-none !px-0 !border-b-1 !border-[#8BCF9A] 
+              focus:!shadow-none focus:!outline-none
+              focus:border-b-2 focus:border-[#8BCF9A] 
+            hover:!border-[#8BCF9A]"
               onKeyUp={(e) => handleKeyUp(i, e)}
               ref={(el) => (inputsRef.current[i] = el)}
             />
           ))}
         </div>
 
-        <AuthButton htmlType="submit" loading={loading}>
-          Send Code
-        </AuthButton>
+       <div className='md:py-6'>
+         <Link href="/reset-password">
+         <AuthButton htmlType="submit" loading={loading} text="Send Code">
 
-        <p className="mt-4 text-[12px] text-[#6b7280]">
-          Didn’t receive it? Wait a few minutes or resend the code.
+        </AuthButton>
+         </Link>
+       </div>
+
+        <p className="mt-4 text-[12px] text-[#9F9C96]">
+          Didn’t receive it? Wait a few minutes or <br />
+          <button className="cursor-pointer !text-[#595D62] text-sm !underline hover:!text-[#144A6C]">
+            resend the code.
+          </button>
         </p>
       </Form>
     </AuthShell>

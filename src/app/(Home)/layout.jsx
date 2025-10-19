@@ -1,15 +1,9 @@
 import { Geist, Geist_Mono, Noto_Serif, Open_Sans, Poppins } from "next/font/google";
 import "../globals.css";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
 
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -37,9 +31,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${openSans.variable} ${poppins.variable} ${notoSerif.variable} antialiased`}
+        className={`${openSans.variable} ${poppins.variable} ${notoSerif.variable} antialiased  bg-background text-foreground min-h-screen`}
       >
-        {children}
+        <div className="absolute inset-x-0 top-0 z-50">
+          <Header />
+        </div>
+         <main className="">{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -5,6 +5,10 @@ import AuthShell from '@/components/shared/AuthShell';
 import AuthButton from '@/components/ui/AuthButton';
 import { LockOutlined, UserOutlined, MailOutlined } from '@ant-design/icons';
 import { useState } from 'react';
+import Link from 'next/link';
+import '@/styles/Auth.css'
+import RoleToggleMUI from '@/components/auth/RoleToggle';
+
 
 export default function RegisterPage() {
   const [form] = Form.useForm();
@@ -14,36 +18,43 @@ export default function RegisterPage() {
     setLoading(true);
     try {
       // TODO: signup
-      message.success('Account created (demo)');
+      message.success('Account created successfully');
     } finally {
       setLoading(false);
     }
   };
 
-  const headerExtra = (
-    <Space size={12} align="center">
-      <Avatar size={40}>P</Avatar>
-      <div className="leading-tight">
-        <div className="text-[13px] font-medium text-[#0c1323]">Professor</div>
-        <div className="text-xs text-[#6b7280]">Profile</div>
-      </div>
-    </Space>
-  );
+
+
 
   return (
     <AuthShell
       title="Create a new account"
-      
-      backHref="/login"
-      rightHeaderExtra={headerExtra}
+      subtitle={
+        <>
+          Already have an account?{' '}
+          <Link href="/sign-up" className="text-[#1F4E78] hover:underline">
+            Sign in
+          </Link>
+        </>
+      }
+
+      backHref="/sign-in"
+
     >
       <Form
         form={form}
         layout="vertical"
         requiredMark={false}
         onFinish={onFinish}
+        initialValues={{ role: 'buyer' }}
         className="[&_.ant-form-item-label>label]:text-[13px] [&_.ant-form-item]:mb-4"
       >
+        {/* Toggle button for buyer & seller */}
+        <Form.Item name="role" valuePropName="value">
+          <RoleToggleMUI />
+        </Form.Item>
+
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <Form.Item
             label="First name"
@@ -81,9 +92,13 @@ export default function RegisterPage() {
           <Input.Password size="large" prefix={<LockOutlined />} placeholder="Create password" />
         </Form.Item>
 
-        <AuthButton htmlType="submit" loading={loading}>
-          Create Account
-        </AuthButton>
+        <div className='md:pt-6'>
+          <Link href="/sign-in" >
+            <AuthButton htmlType="submit" loading={loading} text="Create Account">
+
+            </AuthButton>
+          </Link>
+        </div>
       </Form>
     </AuthShell>
   );

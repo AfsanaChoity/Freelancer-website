@@ -5,6 +5,8 @@ import AuthShell from '@/components/shared/AuthShell';
 import AuthButton from '@/components/ui/AuthButton';
 import { MailOutlined } from '@ant-design/icons';
 import { useState } from 'react';
+import Link from 'next/link';
+import '@/styles/Auth.css'
 
 export default function ForgotPasswordPage() {
   const [form] = Form.useForm();
@@ -45,9 +47,13 @@ export default function ForgotPasswordPage() {
           <Input size="large" prefix={<MailOutlined />} placeholder="you@example.com" />
         </Form.Item>
 
-        <AuthButton htmlType="submit" loading={loading} text="Send Code">
+        <div className='md:pt-10'>
+         <Link href="/verify-code">
+          <AuthButton htmlType="submit" loading={loading} text="Send Code">
           
         </AuthButton>
+         </Link>
+        </div>
       </Form>
     </AuthShell>
   );
