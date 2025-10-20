@@ -21,7 +21,7 @@ const items = [
     key: '1',
     label: (
       <Link href="/">
-        HOME
+        Home
       </Link>
     ),
   },
@@ -37,7 +37,7 @@ const items = [
     key: '3',
      label: (
       <Link href="/start-selling">
-        Became a seller
+        Be a seller
       </Link>
     ),
   },
@@ -45,8 +45,8 @@ const items = [
   {
     key: '4',
      label: (
-      <Link href="/certified-services">
-       Certified Services
+      <Link href="/services">
+       Services
       </Link>
     ),
   },
@@ -92,9 +92,11 @@ export default function Header() {
             <ul className='font-open-sans lg:text-[16px] xl:text-[22px] flex items-center '>
               <Link href="/"><li className={`mx-4 cursor-pointer ${pathname === "/" ? activeBtn : " "}`}>Home</li></Link>
               <Link href="/explore"><li className={`mx-4 cursor-pointer ${pathname === "/explore" ? activeBtn : " "}`}>Explore</li></Link>
-              <a href="/packages"><li className="mx-4 cursor-pointer">Be a seller</li></a>
-              <a href="/pre-arrival"><li className="mx-4 cursor-pointer">Services</li></a>
-              <a href="/service-request"><li className="mx-4 cursor-pointer">About us</li></a>
+              <Link href="/start-selling"><li className={`mx-4 cursor-pointer ${pathname === "/start-selling" ? activeBtn : " "}`}>Be a seller</li></Link>
+              <Link href="/services"><li className={`mx-4 cursor-pointer ${pathname === "/services" ? activeBtn : " "}`}>Services</li></Link>
+              <Link href="/about-us"><li className={`mx-4 cursor-pointer ${pathname === "/about-us" ? activeBtn : " "}`}>About us</li></Link>
+              
+              
 
 
             </ul>

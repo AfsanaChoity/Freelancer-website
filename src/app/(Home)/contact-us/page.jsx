@@ -28,7 +28,7 @@ export default function ContactPage() {
     return (
         <CustomContainer >
 
-            <div className=' bg-white py-8 rounded-2xl shadow '>
+            <div className=' bg-white py-8 rounded-2xl shadow-lg '>
                 <div className="mx-auto max-w-2xl px-4">
                     {/* Top contact info */}
                     <div className='flex flex-col gap-4 md:flex-row md:justify-between mb-10 lg:mb-14'>
