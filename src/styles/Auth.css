@@ -30,3 +30,25 @@
   outline: none !important;
   box-shadow: none !important;
 }
+
+
+/* Ant selector  */
+
+.wa-select .ant-select-selector {
+    border-color: #d1d5db !important;             /* gray-300-ish */
+    box-shadow: none !important;
+  }
+
+  /* Hover / focus / open — match your Input focus color (change to your color) */
+  .wa-select.ant-select-focused .ant-select-selector,
+  .wa-select.ant-select-open .ant-select-selector,
+  .wa-select .ant-select-selector:focus,
+  .wa-select .ant-select-selector:hover {
+    border-color: #144A6C !important;             /* ← same as your Input focus */
+    box-shadow: none !important;                  /* remove blue glow */
+  }
+
+  /* Also remove the focus ring on the trigger */
+  .wa-select .ant-select-selection-search-input:focus {
+    box-shadow: none !important;
+  }

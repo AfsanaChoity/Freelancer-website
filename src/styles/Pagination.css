@@ -1,0 +1,21 @@
+/* Active page item */
+.ant-pagination .ant-pagination-item-active {
+  background-color: #8BCF9A !important;
+  border-color: #8BCF9A !important;
+}
+
+.ant-pagination .ant-pagination-item-active a {
+  color: #fff !important;
+}
+
+/* Keep it consistent on hover/focus */
+.ant-pagination .ant-pagination-item-active:hover,
+.ant-pagination .ant-pagination-item-active:focus {
+  background-color: #8BCF9A !important;
+  border-color: #8BCF9A !important;
+}
+
+.ant-pagination .ant-pagination-item-active:hover a,
+.ant-pagination .ant-pagination-item-active:focus a {
+  color: #fff !important;
+}

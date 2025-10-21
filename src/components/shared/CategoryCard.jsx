@@ -1,12 +1,18 @@
 'use client';
 
 import Image from "node_modules/next/image";
+import Link from "next/link";
+import GenerateSlug from "../ui/GenerateSlug";
 
-export default function CategoryCard({ title, icon, onClick }) {
+export default function CategoryCard({ title, icon }) {
+
+   const slug = GenerateSlug(title)
+
+   localStorage.setItem("slug", slug)
+
   return (
-    <button
-      type="button"
-      onClick={onClick}
+    <Link
+      href={`/${slug}`}
       className="
         group w-full
         rounded-xl border border-gray-200 bg-white
@@ -34,6 +40,8 @@ export default function CategoryCard({ title, icon, onClick }) {
           </h3>
         </div>
       </div>
-    </button>
+    </Link>
   );
+
+ 
 }

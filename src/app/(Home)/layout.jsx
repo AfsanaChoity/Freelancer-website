@@ -1,4 +1,4 @@
-import {  Noto_Serif, Open_Sans, Poppins,  Nunito} from "next/font/google";
+import {  Noto_Serif, Open_Sans, Poppins,  Nunito, Inter} from "next/font/google";
 import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -8,6 +8,11 @@ import Footer from "@/components/layout/Footer";
 const openSans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-open-sans-src",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter-src",
 });
 
 const poppins = Poppins({
@@ -37,7 +42,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${openSans.variable} ${poppins.variable} ${notoSerif.variable} ${nunito.variable} antialiased  bg-background text-foreground min-h-screen`}
+        className={`${openSans.variable} ${poppins.variable} ${notoSerif.variable} ${nunito.variable} ${inter.variable} antialiased  bg-background text-foreground min-h-screen`}
       >
         <div className="absolute inset-x-0 top-0 z-50">
           <Header />

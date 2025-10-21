@@ -33,7 +33,7 @@ export default function RegisterPage() {
       subtitle={
         <>
           Already have an account?{' '}
-          <Link href="/sign-up" className="text-[#1F4E78] hover:underline">
+          <Link href="/sign-in" className="text-[#1F4E78] hover:underline">
             Sign in
           </Link>
         </>

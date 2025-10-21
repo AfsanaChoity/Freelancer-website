@@ -32,7 +32,7 @@ export default function HomePage() {
         </div>
 
         {/* How it works */}
-        <div>
+        <div className='mt-10 lg:mt-20'>
           <HowItWorks />
         </div>
 

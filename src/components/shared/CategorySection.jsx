@@ -10,7 +10,10 @@ const categories = Array.from({ length: 12 }).map((_, i) => ({
   id: i + 1,
   title: 'Finance & Accounting',
   icon: financeIcon,
+ 
 }));
+
+
 
 export default function CategoriesSection({heading}) {
   return (
@@ -34,3 +37,4 @@ export default function CategoriesSection({heading}) {
     </section>
   );
 }
+

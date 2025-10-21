@@ -90,11 +90,11 @@ export default function Header() {
           {/* lists */}
           <div className='hidden lg:block'>
             <ul className='font-open-sans lg:text-[16px] xl:text-[22px] flex items-center '>
-              <Link href="/"><li className={`mx-4 cursor-pointer ${pathname === "/" ? activeBtn : " "}`}>Home</li></Link>
-              <Link href="/explore"><li className={`mx-4 cursor-pointer ${pathname === "/explore" ? activeBtn : " "}`}>Explore</li></Link>
-              <Link href="/start-selling"><li className={`mx-4 cursor-pointer ${pathname === "/start-selling" ? activeBtn : " "}`}>Be a seller</li></Link>
-              <Link href="/services"><li className={`mx-4 cursor-pointer ${pathname === "/services" ? activeBtn : " "}`}>Services</li></Link>
-              <Link href="/about-us"><li className={`mx-4 cursor-pointer ${pathname === "/about-us" ? activeBtn : " "}`}>About us</li></Link>
+              <Link href="/"><li className={`mx-4 cursor-pointer   ${pathname === "/" ? activeBtn : "hover:font-semibold hover:text-[#144A6C] "}`}>Home</li></Link>
+              <Link href="/explore"><li className={`mx-4 cursor-pointer  ${pathname === "/explore" ? activeBtn : "hover:font-semibold hover:text-[#144A6C] "}`}>Explore</li></Link>
+              <Link href="/start-selling"><li className={`mx-4 cursor-pointer  ${pathname === "/start-selling" ? activeBtn : " hover:font-semibold hover:text-[#144A6C]"}`}>Be a seller</li></Link>
+              <Link href="/services"><li className={`mx-4 cursor-pointer  ${pathname === "/services" ? activeBtn : "hover:font-semibold hover:text-[#144A6C] "}`}>Services</li></Link>
+              <Link href="/about-us"><li className={`mx-4 cursor-pointer ${pathname === "/about-us" ? activeBtn : " hover:font-semibold hover:text-[#144A6C]"}`}>About us</li></Link>
               
               
 
