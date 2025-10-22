@@ -7,12 +7,14 @@
     border-color: #144A6C !important;
 }
 
+ 
 .ant-input-outlined:focus,
 .ant-input-outlined:focus-within {
   border-color: #144A6C !important;
   box-shadow: 0 0 0 2px rgba(20, 74, 108, 0.14) !important; /* replace blue ring */
   outline: none !important;
 }
+
 
 /* ---- Affix Wrapper (prefix/suffix & Password) ---- */
 .ant-input-affix-wrapper:hover {
@@ -52,3 +54,44 @@
   .wa-select .ant-select-selection-search-input:focus {
     box-shadow: none !important;
   }
+
+ 
+  /* for ant design select field  */
+
+  /* make sure your Select has className="wa-select" */
+
+/* main selector + all focus states */
+.wa-select .ant-select-selector,
+.wa-select .ant-select-selector:focus,
+.wa-select .ant-select-selector:focus-within,
+.wa-select .ant-select-selector:focus-visible,
+.wa-select.ant-select-focused .ant-select-selector,
+.wa-select.ant-select-open .ant-select-selector {
+  border-color: #144A6C !important;
+  box-shadow: 0 0 0 2px rgba(20, 74, 108, 0.14) !important;
+  -webkit-box-shadow: 0 0 0 2px rgba(20, 74, 108, 0.14) !important;
+  outline: none !important;
+}
+
+/* also target Ant's global focused class just in case */
+.ant-select-focused .ant-select-selector {
+  border-color: #144A6C !important;
+  box-shadow: 0 0 0 2px rgba(20, 74, 108, 0.14) !important;
+  outline: none !important;
+}
+
+/* inner search/input inside Select can show native outline — remove it */
+.wa-select .ant-select-selection-search-input,
+.wa-select .ant-select-selection-search-input:focus,
+.wa-select .ant-select-selection-search-input:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+/* extra: when the Select trigger receives focus via keyboard */
+.wa-select .ant-select-selector:focus-visible {
+  border-color: #144A6C !important;
+  box-shadow: 0 0 0 2px rgba(20, 74, 108, 0.14) !important;
+  outline: none !important;
+}

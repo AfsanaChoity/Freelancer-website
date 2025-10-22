@@ -13,7 +13,7 @@ export default function BannerHero({  onSearch }) {
  
 
   return (
-    <section className="relative  w-full h-[68vh] min-h-[520px]">
+    <section className="relative  w-full h-[100vh] min-h-[520px]">
       {/* BG image fills the section */}
       <Image
         src={bgSrc}
@@ -28,7 +28,7 @@ export default function BannerHero({  onSearch }) {
       {/* Content column */}
       <div className="relative z-10 h-full">
         <div className="mx-auto h-full w-full max-w-6xl px-4 md:px-6 flex items-center">
-          <div className="w-full max-w-3xl">
+          <div className="w-full max-w-3xl ">
             {/* Heading — Open Sans */}
             <h1 className="font-open-sans text-white leading-[1.3] font-bold  tracking-[-0.01em] text-[34px] sm:text-5xl md:text-[52px]">
               Hire the Right
@@ -40,7 +40,9 @@ export default function BannerHero({  onSearch }) {
 
             {/* Search row */}
 
-            <SearchField onSearch={onSearch}/>
+           <div className='mt-10'>
+             <SearchField onSearch={onSearch}/>
+           </div>
           </div>
         </div>
       </div>

@@ -77,7 +77,7 @@ export default function Header() {
   return (
     <div className='px-4'>
       {/* navbar */}
-      <nav className='relative z-20 container mx-auto px-4 xl:px-8  py-3 lg:py-4   bg-[#E1E1E1]/50 mt-4 rounded-[20px]'>
+      <nav className='relative z-20 container mx-auto px-4 xl:px-8  py-3 lg:py-4   bg-[#E1E1E1]/50 mt-4 rounded-[20px] border border-[#E1E1E1]'>
 
         {/* content */}
         <div className=' flex justify-between items-center '>

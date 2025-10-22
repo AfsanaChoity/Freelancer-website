@@ -70,7 +70,7 @@ export default  function CategoryPage({ params }) {
                  <Link href="/explore" className="font-nunito text-gray-700 font-medium">Category</Link>
             </div>
 
-            <div className='flex flex-col md:flex-row gap-4 justify-between items-center mt-10 lg:mt-20'>
+            <div className='flex flex-col md:flex-row gap-4 justify-between items-center mt-10 lg:mt-12'>
                             <div>
                                <Paragraph text="5000+ Results"/>
                             </div>

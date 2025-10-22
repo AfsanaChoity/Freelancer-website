@@ -1,16 +1,27 @@
 // components/ui/RoleToggleMUI.jsx
 'use client';
 
+import { initiateRole } from '@/redux/auth/userSlice';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { Padding } from 'node_modules/@mui/icons-material/index';
 import { useCallback } from 'react';
+import { useDispatch } from 'react-redux';
 
-export default function RoleToggleMUI({ value = 'buyer', onChange }) {
+export default function RoleToggleMUI({ value , onChange, role1, role2 }) {
+  const dispatch = useDispatch();
+
   const handle = useCallback((e, next) => {
-    // prevent clearing selection (MUI sets next = null when clicking the selected item)
+    
+   
+
     if (!next) return;
     onChange?.(next);
+
+    const payload = next;
+    dispatch(initiateRole(payload));
+     
+
   }, [onChange]);
 
   return (
@@ -61,10 +72,10 @@ export default function RoleToggleMUI({ value = 'buyer', onChange }) {
 }}
         >
           <ToggleButton value="buyer" disableRipple className="rounded-full">
-            Buyer
+            {role1}
           </ToggleButton>
           <ToggleButton value="freelancer" disableRipple className="rounded-full">
-            Freelancer
+           {role2}
           </ToggleButton>
         </ToggleButtonGroup>
       </div>

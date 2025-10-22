@@ -1,21 +1,12 @@
 'use client';
 
-export default function PricingCard({
-    title = 'Basic',
-    blurb = 'Kick off your AI journey with all the basics to spark your creativity',
-    price = 6,
-    currency = 'EUR',
-    period = 'month',
-    billedText = 'Billed monthly',
-    ctaText = 'Get Basic',
-    onCta = () => { },
-    features = [
-        '7,000 AI credits/month for creating images, videos, audio, and other generations',
-        '7,000 AI credits/month for creating images, videos, audio, and other generations',
-        '7,000 AI credits/month for creating images, videos, audio, and other generations',
-    ],
-    className = '',
-}) {
+import AuthButton from "@/components/ui/AuthButton";
+import TealBtn from "@/components/ui/TealBtn";
+import Link from "next/link";
+
+export default function PricingCard({ plan }) {
+
+    console.log(plan)
     return (
         <div
             className={[
@@ -24,46 +15,42 @@ export default function PricingCard({
                 'transform-gpu will-change-transform',
                 'transition-transform duration-200 ease-out',
                 'hover:-translate-y-1 hover:scale-[1.03] hover:shadow-xl',
-                className,
+
             ].join(' ')}
         >
             {/* Header */}
-            <h3 className="text-[18px] sm:text-[19px] font-semibold text-gray-900">{title}</h3>
-            <p className="mt-1 text-[13px] text-gray-500 leading-5">{blurb}</p>
+            <h3 className="text-[18px] sm:text-[19px] font-semibold text-gray-900">{plan.title}</h3>
+            <p className="mt-1 text-[13px] text-gray-500 leading-5">{plan.blurb}</p>
 
             {/* Price */}
             <div className="mt-4 flex items-baseline gap-2">
                 <div className="text-[28px] sm:text-[30px] font-bold text-gray-900">
-                    {price} {currency}
+                    {plan.price} {plan.currency}
                 </div>
-                <span className="text-[13px] text-gray-600">/ {period}</span>
+                <span className="text-[13px] text-gray-600">/ {plan.period}</span>
             </div>
 
             {/* Billed note */}
-            <div className="mt-1 text-[12px] text-gray-500">{billedText}</div>
+            <div className="mt-1 text-[12px] text-gray-500">{plan.billedText}</div>
 
             {/* CTA */}
-            <button
-                onClick={onCta}
-                className="
-          mt-4 w-full h-11 rounded-md
-          bg-[#144A6C] text-white font-semibold
-          shadow-[0_8px_16px_-6px_rgba(20,74,108,0.35)]
-          hover:bg-[#0f3a55] transition-colors
-          focus:outline-none focus:ring-2 focus:ring-[#144A6C]/30
-          cursor-pointer
-        "
+            <div className=" mt-4">
+                <Link
+            href={`/payment/${plan.id}`}
+            className="block bg-[#144A6C] text-white font-open-sans font-semibold !w-full py-2 text-center 2xl:text-[18px] rounded-[6px]"
             >
-                {ctaText}
-            </button>
+                
+                {plan.ctaText}
+            </Link>
+            </div>
 
             {/* Features */}
             <div className="mt-5">
                 <div className="text-[12px] font-semibold text-gray-700 mb-2">AI Suite with:</div>
                 <ul className="space-y-3">
-                    {features.map((f, i) => (
+                    {plan.features.map((f, i) => (
                         <li key={i} className="flex items-start gap-2 text-[13px] text-gray-600 leading-5">
-                            {/* check icon */}
+                            
                             <svg
                                 className="mt-[2px] h-4 w-4 text-[#61C792] shrink-0"
                                 viewBox="0 0 20 20"

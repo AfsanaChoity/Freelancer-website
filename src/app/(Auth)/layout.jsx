@@ -1,15 +1,7 @@
 import { Geist, Geist_Mono, Noto_Serif, Open_Sans, Poppins } from "next/font/google";
 import "../globals.css";
+import { Providers } from "@/redux/provider";
 
-// const geistSans = Geist({
-//   variable: "--font-geist-sans",
-//   subsets: ["latin"],
-// });
-
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
 
 const openSans = Open_Sans({
   subsets: ["latin"],
@@ -39,7 +31,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${openSans.variable} ${poppins.variable} ${notoSerif.variable} antialiased`}
       >
-        {children}
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

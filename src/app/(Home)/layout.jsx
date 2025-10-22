@@ -2,6 +2,7 @@ import {  Noto_Serif, Open_Sans, Poppins,  Nunito, Inter} from "next/font/google
 import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { Providers } from "@/redux/provider";
 
 
 
@@ -44,11 +45,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${openSans.variable} ${poppins.variable} ${notoSerif.variable} ${nunito.variable} ${inter.variable} antialiased  bg-background text-foreground min-h-screen`}
       >
-        <div className="absolute inset-x-0 top-0 z-50">
+       <Providers>
+         <div className=" absolute md:fixed inset-x-0 top-0 z-50">
           <Header />
         </div>
          <main className="">{children}</main>
         <Footer />
+       </Providers>
       </body>
     </html>
   );

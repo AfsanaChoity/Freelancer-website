@@ -17,7 +17,7 @@ export default function SearchField({ onSearch, className = '' }) {
   return (
     <form
       onSubmit={submit}
-      className={`mt-4 sm:mt-6 flex flex-col gap-3 sm:flex-row sm:items-center ${className}`}
+      className={`mt-4 sm:mt-6 flex flex-col gap-4 md:gap-2 sm:flex-row sm:items-center ${className}`}
     >
       {/* Input shell */}
       <label className="sr-only" htmlFor="global-search">Search Any Service</label>

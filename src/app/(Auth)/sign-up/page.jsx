@@ -3,18 +3,29 @@
 import { Form, Input, message, Avatar, Space } from 'antd';
 import AuthShell from '@/components/shared/AuthShell';
 import AuthButton from '@/components/ui/AuthButton';
-import { LockOutlined, UserOutlined, MailOutlined } from '@ant-design/icons';
+import { LockOutlined, UserOutlined, MailOutlined,EnvironmentOutlined  } from '@ant-design/icons';
 import { useState } from 'react';
 import Link from 'next/link';
 import '@/styles/Auth.css'
 import RoleToggleMUI from '@/components/auth/RoleToggle';
+import { useDispatch, useSelector } from 'react-redux';
+import { useRouter } from 'node_modules/next/navigation';
+import { createUser } from '@/redux/auth/userSlice';
 
 
 export default function RegisterPage() {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const router = useRouter();
 
-  const onFinish = async () => {
+  const savedRole = useSelector((state) => state.user.initialRole ?? null)
+  
+
+  const onFinish = async (values) => {
+    
+    
+
     setLoading(true);
     try {
       // TODO: signup
@@ -22,6 +33,16 @@ export default function RegisterPage() {
     } finally {
       setLoading(false);
     }
+
+    const payload = values.role;
+    dispatch(createUser(payload));
+    if(payload === 'buyer'){
+      router.push('/sign-in')
+    }
+    else if(payload === 'freelancer') {
+      router.push('/sign-up/step-2')
+    }
+
   };
 
 
@@ -40,6 +61,7 @@ export default function RegisterPage() {
       }
 
       backHref="/sign-in"
+      register={true}
 
     >
       <Form
@@ -52,7 +74,7 @@ export default function RegisterPage() {
       >
         {/* Toggle button for buyer & seller */}
         <Form.Item name="role" valuePropName="value">
-          <RoleToggleMUI />
+          <RoleToggleMUI role1="Buyer" role2="Freelancer"/>
         </Form.Item>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -84,6 +106,20 @@ export default function RegisterPage() {
           <Input size="large" prefix={<MailOutlined />} placeholder="you@example.com" />
         </Form.Item>
 
+        {savedRole === 'freelancer' && (
+           <Form.Item
+          label="Address"
+          name="address"
+          rules={[
+            { required: true, message: 'Please enter your address' },
+            // { type: 'text', message: 'Enter a valid email' },
+          ]}
+        >
+          <Input size="large" prefix={<EnvironmentOutlined />} placeholder="Dhaka ,Bangladesh" />
+        </Form.Item>
+
+        )}
+
         <Form.Item
           label="Password"
           name="password"
@@ -93,11 +129,11 @@ export default function RegisterPage() {
         </Form.Item>
 
         <div className='md:pt-6'>
-          <Link href="/sign-in" >
-            <AuthButton htmlType="submit" loading={loading} text="Create Account">
+          
+            <AuthButton htmlType="submit" loading={loading} text={savedRole=== 'freelancer'?"Next" : "Create Account"}>
 
             </AuthButton>
-          </Link>
+          
         </div>
       </Form>
     </AuthShell>
