@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import tick from '@/assets/icons/tick-circle.svg'
 import arrow from '@/assets/icons/arrow-right.svg'
+import Link from 'next/link';
 
 export default function FreelancerCard({
   imgSrc,
@@ -64,13 +65,12 @@ export default function FreelancerCard({
 
         {/* Footer action */}
         <div className="mt-3">
-          <button
-            type="button"
-            onClick={onHire}
+          <Link
+            href="/details"
             className="inline-flex font-open-sans items-center  text-[16px] font-medium text-gray-700 hover:text-[#144A6C]"
           >
             Hire Now <span aria-hidden><Image src={arrow} alt="icon"/></span>
-          </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -17,7 +17,7 @@ export default function ExplorePage() {
         <FlexibleBanner
           bgSrc={hero}
           variant="search"
-          title="Find the Right Professional for Your Business Needs"
+          title="Find The Right Pro For Your Business"
           SearchField={SearchField}
           onSearch={(q) => console.log('search:', q)}
           tags={[

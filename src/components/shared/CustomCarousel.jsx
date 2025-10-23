@@ -102,7 +102,7 @@ export default function CustomCarousel({ items = [] }) {
             disabled={currentIndex === 0}
             aria-label="Previous"
             className={`h-10 w-10 bg-white flex items-center justify-center rounded-full transition-colors focus:outline-none  shadow
-              ${currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-200'}`}
+              ${currentIndex === 0 ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-200 cursor-pointer'}`}
           >
             <IoIosArrowBack className="text-[#020202] text-xl" />
           </button>
@@ -111,7 +111,7 @@ export default function CustomCarousel({ items = [] }) {
             disabled={currentIndex >= maxIndex}
             aria-label="Next"
             className={`h-10 w-10 bg-white flex items-center justify-center rounded-full transition-colors focus:outline-none  shadow
-              ${currentIndex >= maxIndex ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-200'}`}
+              ${currentIndex >= maxIndex ? 'opacity-50 cursor-not-allowed' : 'hover:bg-gray-200 cursor-pointer'}`}
           >
             <IoIosArrowForward className="text-[#020202] text-xl" />
           </button>

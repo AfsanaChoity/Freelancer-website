@@ -7,16 +7,19 @@ import freelancerImg from '@/assets/image/freelancer2.jpg'; // <-- your image
 export default function JoinAsFreelancerSection() {
   const items = [
     {
-      title: 'Showcase Your Work',
-      desc: 'Create a professional profile, add portfolios and service packages, and highlight skills, rates, and availability.',
+      id: 1,
+      title: 'Showcase Your Expertise',
+      desc: 'Build a standout profile with case studies, credentials, and reviews.',
     },
     {
-      title: 'Reach Verified Clients',
-      desc: 'Get matched with verified businesses, send proposals, and chat securely to discuss scope and timelines.',
+      id:2,
+      title: 'Connect with the Right Clients',
+      desc: 'Get matched with vetted companies or entrepreneurs ready to kick off projects.',
     },
     {
-      title: 'Grow Your Business with Ease',
-      desc: 'Manage bookings, invoices, and payouts from one dashboard—earn reviews and win more work effortlessly.',
+      id: 3,
+      title: 'Scale your business. All in one place',
+      desc: 'Be found. Get booked. Meet. Showcase your best work. Turn reviews into new clients. All within AliumPro.',
     },
   ];
 
@@ -51,7 +54,9 @@ export default function JoinAsFreelancerSection() {
                     <h4 className="text-[16px] sm:text-[17px] font-semibold text-[#000000] font-open-sans">
                       {it.title}
                     </h4>
-                    <p className="mt-1 text-[13px] sm:text-[14px] text-[#6F6F6F] font-nunito ">
+                    <p className={`mt-1 text-[13px] sm:text-[14px] text-[#6F6F6F] font-nunito 
+                      
+                      `}>
                       {it.desc}
                     </p>
                   </li>
@@ -62,7 +67,7 @@ export default function JoinAsFreelancerSection() {
             {/* CTA button */}
             <div className="mt-10 ">
               <div className="">
-                <TealBtn text="Join As a Freelancer" />
+                <TealBtn text="Join As a Pro" />
               </div>
             </div>
            </div>
@@ -72,3 +77,6 @@ export default function JoinAsFreelancerSection() {
     </section>
   );
 }
+
+
+//  ${it.id === 3 ? 'text-gray-700 font-semibold' : ''} 

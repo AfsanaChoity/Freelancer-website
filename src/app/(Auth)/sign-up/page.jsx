@@ -74,7 +74,7 @@ export default function RegisterPage() {
       >
         {/* Toggle button for buyer & seller */}
         <Form.Item name="role" valuePropName="value">
-          <RoleToggleMUI role1="Buyer" role2="Freelancer"/>
+          <RoleToggleMUI role1="Client" role2="Became a pro"/>
         </Form.Item>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">

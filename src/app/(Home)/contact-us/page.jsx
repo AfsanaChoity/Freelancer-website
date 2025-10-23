@@ -74,6 +74,43 @@ export default function ContactPage() {
                             onFinish={onFinish}
                             className="[&_.ant-form-item-label>label]:text-[13px] [&_.ant-form-item-label>label]:font-medium"
                         >
+                            {/* Name */}
+                            <Form.Item
+                                label="Name"
+                                name="name"
+                                rules={[{ required: true, message: 'Please enter your first name' }]}
+                            >
+                                <Input size="large" placeholder="e.g. John Doe" />
+                            </Form.Item>
+
+                            {/* Email */}
+                            <Form.Item
+                                label="Email"
+                                name="email"
+                                rules={[
+                                    { required: true, message: 'Please enter your email' },
+                                    { type: 'email', message: 'Enter a valid email' },
+                                ]}
+                            >
+                                <Input size="large" placeholder="you@example.com" />
+                            </Form.Item>
+
+                            {/* Phone */}
+                            <Form.Item
+                                label="Contact no"
+                                name="phone"
+
+                                rules={[
+                                    { required: true, message: 'Enter your contact number' },
+                                    { pattern: /^[0-9\s\-()+]{6,20}$/, message: 'Enter a valid phone number' },
+                                ]}
+                            >
+                                <Input
+                                    size="large"
+                                    placeholder="+1 111 467 378 399"
+                                />
+                            </Form.Item>
+
                             <Form.Item
                                 label="Subject"
                                 name="subject"

@@ -37,7 +37,7 @@ const items = [
     key: '3',
      label: (
       <Link href="/start-selling">
-        Be a seller
+       Join as a Pro
       </Link>
     ),
   },
@@ -46,14 +46,14 @@ const items = [
     key: '4',
      label: (
       <Link href="/services">
-       Services
+       Certified Services
       </Link>
     ),
   },
   {
     key: '5',
      label: (
-      <Link href="/service-request">
+      <Link href="/about-us">
          About us
       </Link>
     ),
@@ -88,12 +88,12 @@ export default function Header() {
           </div>
 
           {/* lists */}
-          <div className='hidden lg:block'>
+          <div className='hidden xl:block'>
             <ul className='font-open-sans lg:text-[16px] xl:text-[22px] flex items-center '>
               <Link href="/"><li className={`mx-4 cursor-pointer   ${pathname === "/" ? activeBtn : "hover:font-semibold hover:text-[#144A6C] "}`}>Home</li></Link>
               <Link href="/explore"><li className={`mx-4 cursor-pointer  ${pathname === "/explore" ? activeBtn : "hover:font-semibold hover:text-[#144A6C] "}`}>Explore</li></Link>
-              <Link href="/start-selling"><li className={`mx-4 cursor-pointer  ${pathname === "/start-selling" ? activeBtn : " hover:font-semibold hover:text-[#144A6C]"}`}>Be a seller</li></Link>
-              <Link href="/services"><li className={`mx-4 cursor-pointer  ${pathname === "/services" ? activeBtn : "hover:font-semibold hover:text-[#144A6C] "}`}>Services</li></Link>
+              <Link href="/start-selling"><li className={`mx-4 cursor-pointer  ${pathname === "/start-selling" ? activeBtn : " hover:font-semibold hover:text-[#144A6C]"}`}>Join as a Pro</li></Link>
+              <Link href="/services"><li className={`mx-4 cursor-pointer  ${pathname === "/services" ? activeBtn : "hover:font-semibold hover:text-[#144A6C] "}`}>Certified Services</li></Link>
               <Link href="/about-us"><li className={`mx-4 cursor-pointer ${pathname === "/about-us" ? activeBtn : " hover:font-semibold hover:text-[#144A6C]"}`}>About us</li></Link>
               
               
@@ -115,7 +115,7 @@ export default function Header() {
               <Link href='/sign-up' className="bg-[#144A6C] text-white font-open-sans font-semibold px-3 py-1 md:px-8 md:py-2 rounded-[8px]">
               Join
               </Link>
-              <div className='hidden lg:block'>
+              <div className='hidden xl:block'>
                 <Image src={icon} alt="icon"/>
               </div>
             </div>
@@ -123,7 +123,7 @@ export default function Header() {
            }
 
             {/* mobile hamburger */}
-            <div className="lg:hidden">
+            <div className="xl:hidden">
 
               <Dropdown 
                menu={{ items }}

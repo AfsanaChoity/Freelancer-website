@@ -28,8 +28,8 @@ export default function ScheduleAppointmentModal({
 
   const pillBase =
     'min-w-[88px] inline-flex items-center justify-center rounded-md px-3 py-2 text-[12px] leading-none transition';
-  const clsAvailable = `${pillBase} bg-[#E6F6EC] text-[#108a55] hover:bg-[#d7f0e4] active:bg-[#c9e8da] cursor-pointer`;
-  const clsBooked = `${pillBase} bg-[#FFE8E8] text-[#e45858] cursor-not-allowed`;
+  const clsAvailable = `${pillBase} bg-[#DBF0E0] text-[#108a55] hover:bg-[#A1D7B6] hover:text-[#0C6F44] active:bg-[#c9e8da] cursor-pointer`;
+  const clsBooked = `${pillBase} bg-black/10 text-black cursor-not-allowed`;
 
   // when user picks a slot
   const onSelect = (slot) => {

@@ -48,7 +48,7 @@ export default function SearchField({ onSearch, className = '' }) {
       <div className="sm:ml-2 w-full sm:w-auto">
         <TealBtn
           onClick={submit}
-          text="Find expert"
+          text="Find a Pro"
           className="w-full sm:w-auto h-11 sm:h-[50px] px-4 sm:px-6 text-sm sm:text-base"
           /* if TealBtn supports htmlType:
           htmlType="submit"

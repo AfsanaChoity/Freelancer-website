@@ -95,7 +95,7 @@ export default function FlexibleBanner({
                         <Link
                           key={i}
                           href={t.href || '#'}
-                          className="shrink-0 inline-flex items-center gap-2 rounded-md bg-[#7DBA8B] px-3 py-1.5 text-[12px] sm:text-[13px] font-medium text-white hover:bg-[#5aa26a] focus:outline-none focus:ring-2 focus:ring-white/30"
+                          className="shrink-0 inline-flex items-center gap-2 rounded-md bg-[#144A6C1A] px-3 py-1.5 text-[12px] sm:text-[13px] font-medium text-white hover:bg-[#144A6C] focus:outline-none focus:ring-2 focus:ring-white/30"
                         >
                           {t.label} <span aria-hidden><MdOutlineArrowOutward /></span>
                         </Link>

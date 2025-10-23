@@ -20,10 +20,10 @@ export default function BeSellerPage() {
           bgSrc={hero}
           variant="cta"
           title="Turn Your Skills Into Opportunities"
-          subtitle="Join our community of professionals in finance, legal, and marketing. Create your profile, showcase your expertise, and connect with clients who need your services."
-          actionText="Become a Seller"
+          subtitle="Join our network of vetted professionals to showcase your expertise, connect with clients, and collaborate on high-impact projects."
+          actionText="Join as a Pro"
           actionHref="/start-selling"
-          overlayClass="bg-black/35"
+          overlayClass="bg-black/35" 
         />
       </div>
 
