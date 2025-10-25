@@ -66,7 +66,7 @@ export default function FreelancerCard({
         {/* Footer action */}
         <div className="mt-3">
           <Link
-            href="/details"
+            href={`/details/${name}`}
             className="inline-flex font-open-sans items-center  text-[16px] font-medium text-gray-700 hover:text-[#144A6C]"
           >
             Hire Now <span aria-hidden><Image src={arrow} alt="icon"/></span>
