@@ -5,6 +5,8 @@ import Heading from '@/components/ui/Heading';
 import TealBtn from '@/components/ui/TealBtn';
 import { useState } from 'react';
 import '@/styles/Auth.css'
+import RoleToggleMUI from '../auth/RoleToggle';
+import { useSelector } from 'react-redux';
 
 const countryOpts = [
   { value: '+880', label: '🇧🇩  +880' },
@@ -21,6 +23,11 @@ export default function ConfirmBookingModal({
 }) {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
+
+  const savedRole = useSelector((state) => state.user.initialRole ?? null)
+
+  const role1 ='For me'
+  const role2 = 'For Others'
 
   const submit = async () => {
     try {
@@ -51,21 +58,40 @@ export default function ConfirmBookingModal({
             Enter your contact info so your freelancer can reach you easily
           </p>
 
-          {slot && (
+          {/* {slot && (
             <p className="mt-2 text-[12px] text-gray-600 ">
               Selected: <span className="font-semibold">{slot.dayLabel}</span>, {slot.date} at{' '}
               <span className="font-semibold">{slot.time}</span>
             </p>
-          )}
+          )} */}
         </div>
 
-        <Form
+       <div className='mt-10'>
+         <Form
           form={form}
           layout="vertical"
           requiredMark={false}
           className="mt-6"
-          initialValues={{ dial: '+880', phone: '' }}
+          initialValues={{ dial: '+880', phone: '', role: role1}}
         >
+
+           {/* Toggle button for buyer & seller */}
+        <Form.Item name="role" valuePropName="value">
+          <RoleToggleMUI role1={role1} role2={role2}/>
+        </Form.Item>
+
+        {
+          savedRole === role2 && (
+            <Form.Item
+            label="Name"
+            name="name"
+            rules={[{ required: true, message: 'Please enter your name' }]}
+          >
+            <Input size="large" placeholder="e.g. John" />
+          </Form.Item>
+          )
+        }
+
           <Form.Item
             label={<span className="text-[14px] text-gray-800">Whats app</span>}
             required
@@ -104,6 +130,7 @@ export default function ConfirmBookingModal({
             <TealBtn text={loading ? 'Submitting…' : 'Confirm Booking'} onClick={submit} />
           </div>
         </Form>
+       </div>
       </div>
     </Modal>
   );

@@ -20,7 +20,9 @@ export default function RegisterPage() {
   const router = useRouter();
 
   const savedRole = useSelector((state) => state.user.initialRole ?? null)
-  
+
+  const role1 = 'Client';
+  const role2 = 'Become a Pro'
 
   const onFinish = async (values) => {
     
@@ -36,10 +38,10 @@ export default function RegisterPage() {
 
     const payload = values.role;
     dispatch(createUser(payload));
-    if(payload === 'buyer'){
+    if(payload === role1){
       router.push('/sign-in')
     }
-    else if(payload === 'freelancer') {
+    else if(payload === role2) {
       router.push('/sign-up/step-2')
     }
 
@@ -69,12 +71,12 @@ export default function RegisterPage() {
         layout="vertical"
         requiredMark={false}
         onFinish={onFinish}
-        initialValues={{ role: 'buyer' }}
+        initialValues={{ role: role1 }}
         className="[&_.ant-form-item-label>label]:text-[13px] [&_.ant-form-item]:mb-4"
       >
         {/* Toggle button for buyer & seller */}
         <Form.Item name="role" valuePropName="value">
-          <RoleToggleMUI role1="Client" role2="Became a pro"/>
+          <RoleToggleMUI role1= {role1} role2={role2}/>
         </Form.Item>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -106,7 +108,7 @@ export default function RegisterPage() {
           <Input size="large" prefix={<MailOutlined />} placeholder="you@example.com" />
         </Form.Item>
 
-        {savedRole === 'freelancer' && (
+        {savedRole === role2 && (
            <Form.Item
           label="Address"
           name="address"
@@ -130,7 +132,7 @@ export default function RegisterPage() {
 
         <div className='md:pt-6'>
           
-            <AuthButton htmlType="submit" loading={loading} text={savedRole=== 'freelancer'?"Next" : "Create Account"}>
+            <AuthButton htmlType="submit" loading={loading} text={savedRole=== role2?"Next" : "Create Account"}>
 
             </AuthButton>
           

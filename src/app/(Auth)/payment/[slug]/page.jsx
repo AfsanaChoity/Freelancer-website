@@ -9,6 +9,7 @@ import '@/styles/Auth.css'
 import CustomContainer from '@/components/ui/CustomContainer';
 import Heading from '@/components/ui/Heading';
 import CloseBtn from '@/components/ui/CloseBtn';
+import Link from 'node_modules/next/link';
 
 
 export default function PaymentForm({
@@ -126,7 +127,9 @@ export default function PaymentForm({
 
            <div className="pt-8 px-[10%]">
              
+              <Link href="/sign-in">
               <AuthButton text="Pay Now"/>
+              </Link>
             </div>
         </div>
       </div>

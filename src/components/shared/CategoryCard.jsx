@@ -12,7 +12,7 @@ export default function CategoryCard({ title, icon }) {
 
   return (
     <Link
-      href={`/${slug}`}
+      href={`/category/${slug}`}
       className="
         group w-full
         rounded-xl border border-gray-200 bg-white

@@ -1,10 +1,22 @@
+'use client'
 import Image from 'node_modules/next/image'
-import React from 'react'
+import React, { useState } from 'react'
 import Paragraph from '../ui/Paragraph'
 import GreenPara from '../ui/GreenPara'
 import TealBtn from '../ui/TealBtn'
+import ScheduleAppointmentModal from '../modals/ScheduleAppointmentModal'
 
 export default function OfferedServicesCard({ service }) {
+    const [bookingModal, setBookingModal] = useState(false)
+
+
+ 
+
+ const handleBooking = () => {
+     setBookingModal(true);
+   
+    
+ }
     return (
         <div className='flex flex-col md:flex-row gap-4 md:gap-10 items-center bg-white border border-[#E5E5E5] rounded-[10px] p-2'>
             <div className='flex flex-col md:flex-row gap-4 '>
@@ -20,8 +32,15 @@ export default function OfferedServicesCard({ service }) {
 
             {/* button */}
             <div>
-                <TealBtn text="Book now" />
+                <TealBtn text="Book now" onClick={handleBooking}/>
             </div>
+
+            {/* Shcedule Modal */}
+                    <ScheduleAppointmentModal
+                    openBookingModal={bookingModal}
+                    onCloseBookingModal={() => setBookingModal(false)}
+            
+                />
         </div>
     )
 }

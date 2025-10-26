@@ -19,7 +19,7 @@ export default function AuthShell({
 }) {
 
 
-
+  const role2 = 'Become a Pro';
   const savedRole = useSelector((state) => state.user.initialRole ?? null)
 
   // console.log('from shell',savedRole)
@@ -56,7 +56,7 @@ export default function AuthShell({
               </div>
 
               {
-                savedRole === 'freelancer' && register && (
+                savedRole === role2 && register && (
                   <p className='text-[#7DBA8B] font-open-sans '>Step 1</p>
                 )
               }

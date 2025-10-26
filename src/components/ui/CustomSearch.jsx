@@ -3,10 +3,10 @@
 'use client';
 
 import React, { useState } from 'react';
-import TealBtn from '../ui/TealBtn';
+
 import { SearchOutlined, SlidersOutlined } from '@ant-design/icons';
 
-export default function SearchField({ onSearch, className = '' }) {
+export default function CustomSearch({ onSearch,  }) {
   const [q, setQ] = useState('');
 
   const submit = (e) => {
@@ -17,11 +17,11 @@ export default function SearchField({ onSearch, className = '' }) {
   return (
     <form
       onSubmit={submit}
-      className={`mt-4 sm:mt-6 flex flex-col gap-4 md:gap-2 sm:flex-row sm:items-center ${className}`}
+      className={``}
     >
       {/* Input shell */}
-      <label className="sr-only" htmlFor="global-search">Search Any Service</label>
-      <div className="flex items-center bg-white rounded-[8px] shadow ring-1 ring-black/5 w-full h-10 md:h-12 ">
+      <label className="sr-only" htmlFor="global-search">Search</label>
+      <div className="flex items-center bg-white rounded-[16px] shadow ring-1 ring-black/5 w-full h-10 md:h-12 ">
         <span className="pl-3 sm:pl-4 pr-2 text-gray-500 text-[16px] sm:text-[18px]">
           <SearchOutlined />
         </span>
@@ -44,15 +44,7 @@ export default function SearchField({ onSearch, className = '' }) {
         </button>
       </div>
 
-      {/* Find expert button */}
-      <div className="sm:ml-2 w-full sm:w-auto">
-        <TealBtn
-          onClick={submit}
-          text="Find a Pro"
-          className="w-full sm:w-auto h-11 sm:h-[50px] px-4 sm:px-6 text-sm sm:text-base"
-         
-        />
-      </div>
+      
     </form>
   );
 }

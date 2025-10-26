@@ -28,7 +28,7 @@ export const pros = [
 
 export default  function CategoryPage({ params }) {
     const { slug } =  params;
-    console.log(slug)
+    // console.log(slug)
 
     const savedSlug = localStorage.getItem("slug")
 
@@ -67,7 +67,7 @@ export default  function CategoryPage({ params }) {
             <div>
                 <Link href="/" className="font-nunito text-gray-400 font-medium">Home</Link>
                  <Divider type="vertical" />
-                 <Link href="/explore" className="font-nunito text-gray-700 font-medium">Category</Link>
+                 <Link href={`/${slug}`} className="font-nunito text-gray-700 font-medium">Category</Link>
             </div>
 
             <div className='flex flex-col md:flex-row gap-4 justify-between items-center mt-10 lg:mt-12'>

@@ -19,7 +19,7 @@ export default function ProfessionalPortfolioesPage({
 }) {
   return (
     <CustomContainer >
-        <div className="flex items-center justify-between gap-4 py-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 py-4">
         {/* Left: Avatar + text */}
         <div className="flex items-center gap-3 sm:gap-4 min-w-0">
           {/* Avatar */}
@@ -61,7 +61,7 @@ export default function ProfessionalPortfolioesPage({
             </div>
 
             {/* Subtitle */}
-            <p className="mt-0.5 text-sm text-gray-500 truncate">
+            <p className="mt-0.5 text-sm text-gray-500 ">
               {subtitle}
             </p>
           </div>

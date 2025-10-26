@@ -7,19 +7,32 @@ import AuthButton from '@/components/ui/AuthButton';
 import { MailOutlined, LockOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import '@/styles/Auth.css'
+import { useDispatch } from 'react-redux';
+import { loginUser } from '@/redux/auth/userSlice';
+import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
+  const router = useRouter()
 
-  const onFinish = async () => {
-    setLoading(true);
-    try {
-      // TODO: call login API
-      message.success('Logged in (demo)');
-    } finally {
-      setLoading(false);
-    }
+  const onFinish = async (values) => {
+
+    const payload = true;
+    dispatch(loginUser(payload));
+    router.push('/');
+
+    // setLoading(true);
+    // try {
+      
+    //   message.success('Logged in successfully');
+    //   dispatch(loginUser(payload));
+    //   router.push('/');
+
+    // } finally {
+    //   setLoading(false);
+    // }
   };
 
   return (
@@ -70,9 +83,9 @@ export default function LoginPage() {
           </Link>
         </div>
 
-        <Link href="/"><AuthButton htmlType="submit" loading={loading} text="Sign In">
+        <AuthButton htmlType="submit" loading={loading} text="Sign In">
           
-        </AuthButton></Link>
+        </AuthButton>
 
         <p className="mt-4 text-[12px] leading-relaxed text-[#9F9C96] ">
           By joining, you agree to the{' '}

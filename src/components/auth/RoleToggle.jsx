@@ -11,9 +11,11 @@ import { useDispatch } from 'react-redux';
 export default function RoleToggleMUI({ value , onChange, role1, role2 }) {
   const dispatch = useDispatch();
 
+  
+
   const handle = useCallback((e, next) => {
     
-   
+  //  console.log(next)
 
     if (!next) return;
     onChange?.(next);
@@ -71,10 +73,10 @@ export default function RoleToggleMUI({ value , onChange, role1, role2 }) {
   },
 }}
         >
-          <ToggleButton value="buyer" disableRipple className="rounded-full">
+          <ToggleButton value={role1} disableRipple className="rounded-full">
             {role1}
           </ToggleButton>
-          <ToggleButton value="freelancer" disableRipple className="rounded-full">
+          <ToggleButton value={role2} disableRipple className="rounded-full">
            {role2}
           </ToggleButton>
         </ToggleButtonGroup>
