@@ -37,7 +37,7 @@
 /* Ant selector  */
 
 .wa-select .ant-select-selector {
-    border-color: #d1d5db !important;             /* gray-300-ish */
+    /* border-color: #d1d5db !important;             gray-300-ish */
     box-shadow: none !important;
   }
 
@@ -46,7 +46,7 @@
   .wa-select.ant-select-open .ant-select-selector,
   .wa-select .ant-select-selector:focus,
   .wa-select .ant-select-selector:hover {
-    border-color: #144A6C !important;             /* ← same as your Input focus */
+    border-color: #144A6C !important;             
     box-shadow: none !important;                  /* remove blue glow */
   }
 
@@ -67,9 +67,9 @@
 .wa-select .ant-select-selector:focus-visible,
 .wa-select.ant-select-focused .ant-select-selector,
 .wa-select.ant-select-open .ant-select-selector {
-  border-color: #144A6C !important;
-  box-shadow: 0 0 0 2px rgba(20, 74, 108, 0.14) !important;
-  -webkit-box-shadow: 0 0 0 2px rgba(20, 74, 108, 0.14) !important;
+  /* border-color: #144A6C !important; */
+  /* box-shadow: 0 0 0 2px rgba(20, 74, 108, 0.14) !important; */
+  /* -webkit-box-shadow: 0 0 0 2px rgba(20, 74, 108, 0.14) !important; */
   outline: none !important;
 }
 

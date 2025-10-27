@@ -93,7 +93,7 @@ export default function ConfirmBookingModal({
         }
 
           <Form.Item
-            label={<span className="text-[14px] text-gray-800">Whats app</span>}
+            label={<span className="text-[14px] text-gray-800">Whats App</span>}
             required
           >
             <Input.Group compact>

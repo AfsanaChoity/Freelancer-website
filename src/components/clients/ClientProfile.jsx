@@ -79,7 +79,7 @@ export default function ClientProfile() {
 
           {/* Change password pill (disabled look) */}
           <Link
-            href="/change-password"
+            href="/profile/change-password"
            
             className=" cursor-pointer mt-10 w-full flex items-center justify-between px-4 py-3 rounded-[10px] border border-[#D9D9D9] bg-[#E5E5E5] "
           >

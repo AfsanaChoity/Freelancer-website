@@ -1,5 +1,6 @@
 'use client'
 import EditClientProfile from '@/components/clients/EditClientProfile';
+import EditProfessionalProfile from '@/components/professionals/EditProfessionalProfile';
 import CustomContainer from '@/components/ui/CustomContainer';
 import { Divider } from 'antd';
 import Link from 'node_modules/next/link';
@@ -11,8 +12,8 @@ export default function EditProfilePage() {
         const role = useSelector((state) => state.user.role ?? null);
   return (
    <CustomContainer>
-
-     <div className='mb-8'>
+            {/* links */}
+            <div className='mb-8'>
                 <Link href="/profile" className="font-nunito text-gray-400 font-medium">Profile</Link>
                 <Divider type="vertical" />
                 <Link href="" className="font-nunito text-gray-700 font-medium">Edit Profile</Link>
@@ -22,6 +23,12 @@ export default function EditProfilePage() {
     {
         (role==='Client') && (
             <EditClientProfile />
+        )
+    }
+
+    {
+        (role === 'Become a Pro') && (
+            <EditProfessionalProfile />
         )
     }
    </CustomContainer>

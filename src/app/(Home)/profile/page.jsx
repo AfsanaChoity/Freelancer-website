@@ -1,5 +1,6 @@
 'use client'
 import ClientProfile from '@/components/clients/ClientProfile';
+import ProfessionalProfile from '@/components/professionals/ProfessionalProfile';
 import CustomContainer from '@/components/ui/CustomContainer'
 import React from 'react'
 import { useSelector } from 'react-redux';
@@ -14,6 +15,12 @@ export default function ProfilePage() {
             (role === 'Client') && (
                 <ClientProfile />
             )
+        }
+
+        {
+          (role === 'Become a Pro') && (
+            <ProfessionalProfile />
+          )
         }
 
     </CustomContainer>
