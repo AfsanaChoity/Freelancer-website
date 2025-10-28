@@ -22,6 +22,7 @@ export default function PortfolioCard({
 }) {
     const [open, setOpen] = useState(false);
 
+    
     return (
         <article className="flex flex-col  overflow-hidden">
 
