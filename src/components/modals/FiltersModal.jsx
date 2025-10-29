@@ -140,6 +140,15 @@ export default function FiltersModal({ open, onClose, onApply }) {
               />
               Top rated
             </label>
+
+             <label className="inline-flex items-center gap-2 text-[14px] text-gray-700">
+              <Checkbox
+                checked={online}
+                onChange={(e) => setOnline(e.target.checked)}
+                className="custom-green-checkbox"
+              />
+              In Person
+            </label>
           </div>
         </div>
 

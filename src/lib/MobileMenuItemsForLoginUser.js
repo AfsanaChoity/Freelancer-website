@@ -12,7 +12,7 @@ export const MobileMenuItemsForLoginUser = [
   {
     key: '2',
     label: (
-      <Link href="/messages">
+      <Link href="/inbox">
         Messages
       </Link>
     ),

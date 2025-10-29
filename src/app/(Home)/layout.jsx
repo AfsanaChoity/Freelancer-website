@@ -48,7 +48,7 @@ export default function RootLayout({ children }) {
         className={`${openSans.variable} ${poppins.variable} ${notoSerif.variable} ${nunito.variable} ${inter.variable} antialiased  bg-background text-foreground min-h-screen`}
       >
        <Providers>
-         <div className=" absolute md:fixed inset-x-0 top-0 z-50">
+         <div className=" absolute  inset-x-0 top-0 z-50">
           <Header />
         </div>
          <main className="">{children}</main>

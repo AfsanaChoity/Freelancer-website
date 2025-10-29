@@ -10,10 +10,10 @@ import PricingCard from './PricingCard'
 export default function PricingSection() {
   return (
     <div>
-        <SectionContainer heading="Flexible Subscriptions for Every Professional" title="Pricing">
+        <SectionContainer heading="Plans for every Professional" title="Pricing">
 
           
-            <div className="grid gap-10 2xl:gap-30 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-10 2xl:gap-10 sm:grid-cols-2 lg:grid-cols-3">
             { pricingPlans.map((plan) => (
               <PricingCard key={plan.id} plan={plan}/>
             ))

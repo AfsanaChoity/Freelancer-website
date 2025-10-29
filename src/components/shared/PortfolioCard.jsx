@@ -58,7 +58,7 @@ export default function PortfolioCard({
                 <div className="mt-4 flex items-center justify-between">
                     <button
                         onClick={() => setOpen(true)}
-                        className="cursor-pointer text-[#9F9C96] font-open-sans font-medium inline-flex items-center gap-2 focus:outline-none"
+                        className="cursor-pointer text-gray-600 font-open-sans font-medium inline-flex items-center gap-2 focus:outline-none"
                     >
                         <span className='text-xl'>View</span>
                         <Image src={arrow} alt="icon" />

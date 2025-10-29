@@ -1,8 +1,10 @@
 import React from 'react'
+import { useState } from 'react';
 import SubHeadingBlack from '../ui/SubHeadingBlack'
 import { Form, Input, Select } from 'antd';
 import { EnvironmentOutlined } from '@ant-design/icons';
 import TealBtn from '@/components/ui/TealBtn';
+import SkillsInput from '@/components/ui/SkillsInput';
 import '@/styles/Auth.css'
 
 export default function EditProfessionalProfile() {
@@ -24,12 +26,12 @@ export default function EditProfessionalProfile() {
                         layout="vertical"
                         requiredMark={false}
                         onFinish={onFinish}
-                        initialValues={{
+                            initialValues={{
                             firstName: 'Asadujjaman',
                             lastName: 'Asadujjaman',
                             email: 'Asadujjaman@gmail.com',
                             address: 'Dhaka ,Bangladesh',
-                            skills: 'Finance expert',
+                            skills: [],
                             experience: '5 years',
                             language: 'Bengle, English',
                             about: '',
@@ -44,7 +46,7 @@ export default function EditProfessionalProfile() {
                             <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
                                 {/* 1st col */}
                                 <div>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    {/* <div className="grid grid-cols-1 sm:grid-cols-2 gap-3"> */}
                                         <Form.Item
                                             label="First name"
                                             name="firstName"
@@ -60,7 +62,7 @@ export default function EditProfessionalProfile() {
                                         >
                                             <Input size="large" placeholder="e.g. Doe" />
                                         </Form.Item>
-                                    </div>
+                                    {/* </div> */}
 
 
                                     <Form.Item
@@ -90,16 +92,16 @@ export default function EditProfessionalProfile() {
                                 {/* 2nd col */}
                                 <div>
                                     <Form.Item
-                                        label="Skills"
-                                        name="skills"
+                                        label="Category"
+                                        name="category"
                                         rules={[
-                                            { required: true, message: 'Please enter your skill' },
+                                            { required: true, message: 'Please select a category' },
 
                                         ]}
                                     >
 
 
-                                        <Select size="large" placeholder="Please select a skill" className="wa-select">
+                                        <Select size="large" placeholder="Please select a category" className="wa-select">
                                             <Select.Option value="finance-expert">Finance Expert</Select.Option>
                                             <Select.Option value="web-developer">Web Developer</Select.Option>
                                             <Select.Option value="graphic-designer">Graphic Designer</Select.Option>
@@ -107,6 +109,8 @@ export default function EditProfessionalProfile() {
 
 
                                     </Form.Item>
+
+                                    
 
                                     <Form.Item
                                         label="Experience"
@@ -125,6 +129,17 @@ export default function EditProfessionalProfile() {
                                         rules={[{ required: true, message: 'Please enter your language' }]}
                                     >
                                         <Input size="large" placeholder="eg: Bangla, English" />
+                                    </Form.Item>
+
+                                    <Form.Item
+                                        label="Skills"
+                                        name="skills"
+                                        rules={[
+                                            { required: true, message: 'Please enter your skills' },
+
+                                        ]}
+                                    >
+                                        <SkillsInput />
                                     </Form.Item>
                                 </div>
                             </div>

@@ -10,7 +10,13 @@ import { CiClock2 } from "react-icons/ci";
 
 import img from "@/assets/image/freelancer/user.jpg";
 import SubHeadingBlack from "@/components/ui/SubHeadingBlack";
+import { useSelector } from "react-redux";
 // import { Tabs } from 'antd'; // Removed unused Tabs import
+import { Switch } from 'antd'
+import TealOutLineBtn from "@/components/ui/TealOutLineBtn";
+
+
+
 
 // Custom pill tabs component
 function TabsPill({ active, setActive }) {
@@ -81,6 +87,9 @@ function StatusPill({ status }) {
 
 // ----------------- Reusable BookingItem (single source of truth) -----------------
 function BookingItem({ item }) {
+    const user = useSelector((state) => state.user.user ?? null);
+    const role = useSelector((state) => state.user.role ?? null);
+
     return (
         <div className="w-full bg-white rounded-lg shadow-[0_6px_16px_rgba(14,35,37,0.06)] border border-[#e9eef0] p-4 flex items-center gap-6">
             <div className="flex-shrink-0">
@@ -121,12 +130,28 @@ function BookingItem({ item }) {
                         <StatusPill status={item.status} />
                     </div>
                     {
-                        item.status !== "completed" && (
+                        role === 'Client' && item.status !== "completed" && (
                             <div>
                                 <TealBtn className="shadow-lg" text={item.status === "canceled" ? "Reschedule" : "Message Now"} />
                             </div>
                         )
                     }
+
+                    {
+                        role === 'Become a Pro' && (
+                            item.status === "confirmed" ? (
+                                <div>
+                                    <TealBtn className="shadow-lg" text="Message Now" />
+                                </div>
+                            ) : item.status === "pending" ? (
+                                <div className="flex gap-2">
+                                    <TealOutLineBtn text="Reject"/>
+                                    <TealBtn  text="Accept" />
+                                </div>
+                            ) : null
+                        )
+                    }
+
                 </div>
 
             </div>
@@ -175,19 +200,47 @@ export default function BookingsPage() {
     const completedList = bookingsMock.filter((b) => b.status === "completed");
     const [activeTab, setActiveTab] = useState('upcoming');
 
+    const user = useSelector((state) => state.user.user ?? null);
+    const role = useSelector((state) => state.user.role ?? null);
+
     return (
         <CustomContainer>
             <div className="min-h-[80vh] ">
-                <h1 className="font-open-sans text-black font-bold text-2xl lg:text-3xl mb-6">My Bookings & Purchases</h1>
+                <div className="flex flex-col md:flex-row justify-between items-center mb-6">
+                    <h1 className="font-open-sans text-black font-bold text-2xl lg:text-3xl mb-6">{role === 'Clent' ? "My Bookings & Purchases" : "My Bookings"}</h1>
+                    {
+                        role === 'Become a Pro' && (
+                            <div className=" flex flex-col md:flex-row gap-4 mb-4 md:mb-0">
+                                <div className="flex items-center gap-2">
+                                    <Switch size="" />
+                                    <span className="font-open-sans font-semibold text-sm md:text-[18px]">
+                                        Client Bookings
+                                    </span>
+
+                                </div>
+
+                                <div className="flex items-center gap-2">
+                                    <Switch size="" />
+                                    <span className="font-open-sans font-semibold text-sm md:text-[18px]">
+                                        Admin Services
+                                    </span>
+
+                                </div>
+
+                            </div>
+                        )
+                    }
+                </div>
 
                 <div className=" w-full mb-6 mx-auto overflow-x-auto">
 
                     <div className="min-w-[700px] ">
 
-                            <div className="flex md:justify-end ">
-                                <TabsPill active={activeTab} setActive={setActiveTab} />
-                            </div>
-                       
+                        {/* <div className="flex md:justify-end "> */}
+                        <div className={`flex ${role === 'Client' ? 'md:justify-end' : 'md:justify-start'}`}>
+                            <TabsPill active={activeTab} setActive={setActiveTab} />
+                        </div>
+
 
                         <div className="">
                             {/* Custom pill-style tabs (matches provided design) */}

@@ -258,12 +258,12 @@ export default function ProfessionalProfile() {
             <div className=' p-4 bg-white rounded-[12px] border border-[#E6E6E6] shadow-[0_12px_34px_rgba(0,0,0,0.10)] overflow-hidden'>
                 {/* text + button */}
                 <div className='flex flex-col gap-4 md:flex-row  justify-between items-center'>
-                    <SubHeadingBlack text="Packages" />
-                    <TealBtn text="Create Package"
+                    <SubHeadingBlack text="Offered Services" />
+                    <TealBtn text="Add Service"
                         onClick={() => {
                             setOpenModal(true)
                             setCreateModal(true)
-                            setHeading('Create Package')
+                            setHeading('Create Service')
                         }} />
                 </div>
 
@@ -275,7 +275,7 @@ export default function ProfessionalProfile() {
                             <OfferedServicesCard service={service} profile={true} onEdit={() => {
                                 setOpenModal(true)
                                 setEditModal(true)
-                                setHeading('Edit Package')
+                                setHeading('Edit Service')
                             }} />
                         ))
                     }

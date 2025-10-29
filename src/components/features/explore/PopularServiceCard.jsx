@@ -1,6 +1,7 @@
 'use client';
 
 import ServicePreviewModal from '@/components/modals/ServicePreviewModal';
+import GreenPara from '@/components/ui/GreenPara';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -35,12 +36,13 @@ export default function PopularServiceCard({
         </h3>
 
         <p className="mt-1 text-[13px] text-[#8BCF9A] font-open-sans">
-          From ${priceFrom}
+          
         </p>
+        <GreenPara text={`From  ${priceFrom}`}/>
 
         <button
          onClick={() => setOpen(true)}
-        className="cursor-pointer font-open-sans mt-2 inline-flex items-center gap-2 text-[13px] text-gray-500 hover:text-gray-700"
+        className="cursor-pointer font-open-sans mt-2 inline-flex items-center gap-2 text-[18px] text-gray-700 font-medium hover:text-gray-700"
         >
           Book Now <span aria-hidden><MdOutlineArrowOutward /></span>
         </button>

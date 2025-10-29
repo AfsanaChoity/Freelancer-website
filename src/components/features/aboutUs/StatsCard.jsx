@@ -15,7 +15,7 @@ export default function StatsCard({ icon, value = '1000+', label = '' }) {
         <div className="text-[18px] font-semibold text-[#8BCF9A] font-open-sans leading-6">
           {value}
         </div>
-        <div className="text-[12px] text-gray-500 font-open-sans">{label}</div>
+        <div className="text-[14px] text-gray-500 font-open-sans">{label}</div>
       </div>
     </div>
   );

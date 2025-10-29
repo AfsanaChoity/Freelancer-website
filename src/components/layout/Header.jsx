@@ -102,7 +102,7 @@ export default function Header() {
               }
               {
                 user && (
-                  <Link href="/messages"><li className={`mx-4 cursor-pointer  ${pathname === "/messages" ? activeBtn : "hover:font-semibold hover:text-[#144A6C] "}`}>Messages</li></Link>
+                  <Link href="/inbox"><li className={`mx-4 cursor-pointer  ${pathname === "/inbox" ? activeBtn : "hover:font-semibold hover:text-[#144A6C] "}`}>Messages</li></Link>
 
                 )
               }
@@ -153,12 +153,18 @@ export default function Header() {
                 </div>
               ) : (
                 <div className='flex gap-2 lg:gap-4 items-center '>
-                  <Link href='/sign-in' className='hidden md:block'>
+                  {/* <Link href='/sign-in' className='hidden md:block'>
                     <TealOutLineBtn text="Sign in" />
+                  </Link> */}
+
+                   <Link href='/sign-in' className="hidden md:block  border border-[#144A6C] text-[#144A6C] font-open-sans font-semibold px-3 py-1 md:px-8 md:py-2 rounded-[8px]">
+                    Sign in
                   </Link>
+
                   <Link href='/sign-up' className="bg-[#144A6C] text-white font-open-sans font-semibold px-3 py-1 md:px-8 md:py-2 rounded-[8px]">
                     Join
                   </Link>
+                  {/* <TealBtn text="Join"/> */}
 
                 </div>
               )

@@ -53,6 +53,15 @@ export default function EditClientProfile() {
               </Form.Item>
             </div>
 
+            {/* job */}
+            <Form.Item label="Job" name="job">
+                <Input
+                  size="large"
+                  placeholder="Enter your job title"
+                  className="placeholder-poppins"
+                />
+              </Form.Item>
+
             {/* Email */}
             <Form.Item label="Email" name="email">
               <Input

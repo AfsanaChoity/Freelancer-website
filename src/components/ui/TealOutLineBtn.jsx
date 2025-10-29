@@ -11,11 +11,28 @@ export default function TealOutLineBtn({ text, onClick = () => {}, icon = null ,
         {text} {icon}
       </Button>
 
-      <style jsx>{`
+      {/* <style jsx>{`
         :global(.tealOutLine-btn .ant-btn) {
           font-size: 16px;
           height: 40px;
           line-height: 32px;
+        }
+      `}</style> */}
+
+      <style jsx>{`
+        /* default (sm and up) */
+        :global(.tealOutLine-btn .ant-btn) {
+          font-size: 18px;
+          height: 46px;
+          line-height: 32px;
+        }
+        /* mobile only */
+        @media (max-width: 1023px) {
+          :global(.tealOutLine-btn .ant-btn) {
+            font-size: 14px;
+            height: 38px;
+            line-height: 24px;
+          }
         }
       `}</style>
     </div>

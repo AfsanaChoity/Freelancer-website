@@ -12,21 +12,21 @@ import CustomPagenation from '@/components/shared/CustomPagenation'
 // import '@/styles/Pagination.css'
 
 const services = [
-    { id: 1, title: 'Legal and Justice', priceFrom: 100, cover: img1, href: '/services/legal' },
-    { id: 2, title: 'Tax Filing Assistance', priceFrom: 100, cover: img1, href: '/services/tax' },
-    { id: 3, title: 'Tax Filing Assistance', priceFrom: 100, cover: img1, href: '/services/tax' },
-    { id: 4, title: 'Tax Filing Assistance', priceFrom: 100, cover: img1, href: '/services/tax' },
-    { id: 5, title: 'Tax Filing Assistance', priceFrom: 100, cover: img1, href: '/services/tax' },
-    { id: 6, title: 'Tax Filing Assistance', priceFrom: 100, cover: img1, href: '/services/tax' },
-    { id: 7, title: 'Tax Filing Assistance', priceFrom: 100, cover: img1, href: '/services/tax' },
-    { id: 8, title: 'Tax Filing Assistance', priceFrom: 100, cover: img1, href: '/services/tax' },
-    { id: 9, title: 'Tax Filing Assistance', priceFrom: 100, cover: img1, href: '/services/tax' },
-    { id: 10, title: 'Tax Filing Assistance', priceFrom: 100, cover: img1, href: '/services/tax' },
-    { id: 11, title: 'Tax Filing Assistance', priceFrom: 100, cover: img1, href: '/services/tax' },
-    { id: 12, title: 'Tax Filing Assistance', priceFrom: 100, cover: img1, href: '/services/tax' },
-    { id: 13, title: 'Tax Filing Assistance', priceFrom: 100, cover: img1, href: '/services/tax' },
-    { id: 14, title: 'Tax Filing Assistance', priceFrom: 100, cover: img1, href: '/services/tax' },
-    { id: 15, title: 'Tax Filing Assistance', priceFrom: 100, cover: img1, href: '/services/tax' },
+    { id: 1, title: 'Legal and Justice', priceFrom: "$100", cover: img1, href: '/services/legal' },
+    { id: 2, title: 'Tax Filing Assistance', priceFrom: "$100", cover: img1, href: '/services/tax' },
+    { id: 3, title: 'Tax Filing Assistance', priceFrom: "$100", cover: img1, href: '/services/tax' },
+    { id: 4, title: 'Tax Filing Assistance', priceFrom: "$100", cover: img1, href: '/services/tax' },
+    { id: 5, title: 'Tax Filing Assistance', priceFrom: "$100", cover: img1, href: '/services/tax' },
+    { id: 6, title: 'Tax Filing Assistance', priceFrom: "$100", cover: img1, href: '/services/tax' },
+    { id: 7, title: 'Tax Filing Assistance', priceFrom: "$100", cover: img1, href: '/services/tax' },
+    { id: 8, title: 'Tax Filing Assistance', priceFrom: "$100", cover: img1, href: '/services/tax' },
+    { id: 9, title: 'Tax Filing Assistance', priceFrom: "$100", cover: img1, href: '/services/tax' },
+    { id: 10, title: 'Tax Filing Assistance', priceFrom: "$100", cover: img1, href: '/services/tax' },
+    { id: 11, title: 'Tax Filing Assistance', priceFrom: "$100", cover: img1, href: '/services/tax' },
+    { id: 12, title: 'Tax Filing Assistance', priceFrom: "$100", cover: img1, href: '/services/tax' },
+    { id: 13, title: 'Tax Filing Assistance', priceFrom: "$100", cover: img1, href: '/services/tax' },
+    { id: 14, title: 'Tax Filing Assistance', priceFrom: "$100", cover: img1, href: '/services/tax' },
+    { id: 15, title: 'Tax Filing Assistance', priceFrom: "$100", cover: img1, href: '/services/tax' },
 ];
 
 export default function ServicesPage() {

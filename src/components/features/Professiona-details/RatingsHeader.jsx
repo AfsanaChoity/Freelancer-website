@@ -48,11 +48,11 @@ function RatingsHeader({ total = 500, rating = 4.5, defaultSortKey = 'recent', o
             placement="bottomRight"
           >
             <button
-              className="cursor-pointer inline-flex items-center gap-2 text-sm text-gray-800 hover:text-gray-900"
+              className="cursor-pointer inline-flex items-center gap-2 font-medium text-gray-800 hover:text-gray-900"
               aria-label="Sort reviews"
             >
               {selectedLabel}
-              <DownOutlined className="text-xs" />
+              <DownOutlined className="text-xs font-medium" />
             </button>
           </Dropdown>
         </div>

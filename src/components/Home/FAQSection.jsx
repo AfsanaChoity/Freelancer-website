@@ -24,7 +24,7 @@ export default function FaqSection() {
     <section className="py-12 md:py-16">
       <div className="container mx-auto  px-4">
         {/* Eyebrow */}
-        <div className="mb-4 flex items-center justify-center gap-2 text-[#8BCF9A] font-nunito ">
+        <div className="mb-4 flex items-center justify-center gap-2 text-[#1e863a] font-nunito ">
           <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#61C792]/20 text-[12px] font-semibold">
             ?
           </span>
@@ -62,7 +62,7 @@ export default function FaqSection() {
                 </svg>
               </summary>
 
-              <div className="pb-4 pr-2 text-[13px] leading-6 text-gray-600">
+              <div className="pb-4 pr-2  leading-6 text-gray-600">
                 {item.a}
               </div>
 

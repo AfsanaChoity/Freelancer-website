@@ -4,6 +4,8 @@ import Image from 'next/image';
 import tick from '@/assets/icons/tick-circle.svg'
 import arrow from '@/assets/icons/arrow-right.svg'
 import Link from 'next/link';
+import { TiTick } from "react-icons/ti";
+import VerifiedDot from '../ui/VerifiedDot';
 
 export default function FreelancerCard({
   imgSrc,
@@ -38,7 +40,8 @@ export default function FreelancerCard({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-[16px] font-semibold text-[#202020] font-open-sans">{name}</span>
-           <Image src={tick} alt="icon"/>
+          
+           <VerifiedDot />
           </div>
 
           <div className="flex items-center gap-1 text-[16px] text-gray-600">
@@ -52,7 +55,7 @@ export default function FreelancerCard({
         <div className="mt-1">
           <button
             type="button"
-            className="text-[12px] text-[#47b65f] bg-[#e7f3e9] underline decoration-transparent hover:decoration-[#61C792] px-2 rounded"
+            className="text-[14px] text-[#1e863a] bg-[#e7f3e9] underline decoration-transparent hover:decoration-[#1e863a] px-2 rounded font-medium"
           >
             {category}
           </button>

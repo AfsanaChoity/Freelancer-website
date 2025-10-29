@@ -32,7 +32,7 @@ export default function PaymentForm({
   };
 
   return (
-    <div className=' '>
+    <div className=' bg-gray-300 min-h-screen'>
         {/* close button */}
         <div>
             <CloseBtn path="/sign-up"/>
@@ -97,10 +97,10 @@ export default function PaymentForm({
 
             <h2 className="text-xl font-semibold mb-2 font-nunito">{plan.title}</h2>
 
-            <div className="text-sm text-gray-600 space-y-4 ">
+            <div className=" text-gray-600 space-y-4 ">
               <div className="flex justify-between font-nunito">
                 <span className=''>Price :</span>
-                <span style={{ color: '#8BCF9A' }}>
+                <span className="text-[#6BAA7C] font-medium">
                   {plan.currency}
                   {plan.price}
                 </span>
@@ -108,7 +108,7 @@ export default function PaymentForm({
 
               <div className="flex justify-between font-nunito">
                 <span>Billing Frequency :</span>
-                <span className="text-[#8BCF9A]">{plan.period}</span>
+                <span className="text-[#6BAA7C] font-medium">{plan.period}</span>
               </div>
 
               <div className="flex justify-between font-nunito">

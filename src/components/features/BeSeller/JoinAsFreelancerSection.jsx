@@ -50,11 +50,11 @@ export default function JoinAsFreelancerSection() {
                 {items.map((it, i) => (
                   <li key={i} className="relative">
                     {/* green dot */}
-                    <span className="absolute -left-6 top-1.5 h-3 w-3 rounded-full bg-[#8BCF9A] ring-4 ring-[#8BCF9A]/20" />
+                    <span className="absolute -left-7 top-1.5 h-4 w-4 rounded-full bg-[#8BCF9A] ring-4 ring-[#8BCF9A]/20" />
                     <h4 className="text-[16px] sm:text-[17px] font-semibold text-[#000000] font-open-sans">
                       {it.title}
                     </h4>
-                    <p className={`mt-1 text-[13px] sm:text-[14px] text-[#6F6F6F] font-nunito 
+                    <p className={`mt-1  text-[#6F6F6F] font-nunito 
                       
                       `}>
                       {it.desc}
@@ -67,7 +67,7 @@ export default function JoinAsFreelancerSection() {
             {/* CTA button */}
             <div className="mt-10 ">
               <div className="">
-                <TealBtn text="Join As a Pro" />
+                <TealBtn text="Join as a Pro" />
               </div>
             </div>
            </div>

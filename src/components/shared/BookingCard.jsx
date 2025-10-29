@@ -3,8 +3,15 @@ import Image from 'next/image'
 import TealBtn from '../ui/TealBtn'
 import { CiCalendar } from "react-icons/ci";
 import { CiClock2 } from "react-icons/ci";
+import { useSelector } from 'react-redux';
+import TealOutLineBtn from '../ui/TealOutLineBtn';
 
 export default function BookingCard({ booking }) {
+
+    const user = useSelector((state) => state.user.user ?? null);
+    const role = useSelector((state) => state.user.role ?? null);
+
+
     return (
         <div className='p-2 bg-white border border-black/10 rounded-[10px] grid grid-cols-1 md:grid-cols-5 items-center gap-4'>
             {/* 1st col */}
@@ -17,7 +24,11 @@ export default function BookingCard({ booking }) {
                 {/* details */}
                 <div className='space-y-2  text-center md:text-left '>
                     <h3 className='text-[#0A0A0A] font-open-sans font-semibold'>{booking.name}</h3>
-                    <p className='bg-[#8BCF9A26] rounded-[2px] p-1 text-sm text-[#8BCF9A] font-nunito font-medium'>{booking.category}</p>
+                    {
+                        role === 'Client' && (
+                            <p className='bg-[#8BCF9A26] rounded-[2px] p-1 text-sm text-[#8BCF9A] font-nunito font-medium'>{booking.category}</p>
+                        )
+                    }
                     <p className=' text-[#9F9C96] font-open-sans flex items-center justify-center md:justify-start gap-1 text-[16px]'>
                         <CiCalendar />
                         {booking.date}
@@ -45,7 +56,17 @@ export default function BookingCard({ booking }) {
                 )}
                 {booking.status === 'pending' && (
                     <div>
-                        <p className='text-center bg-[#FFC368] py-1 text-[#FFFFFF] rounded-[8px] font-open-sans text-sm w-20 '>{booking.status}</p>
+                        <div className=' flex justify-center md:justify-end'>
+                            <p className='text-center bg-[#FFC368] py-1 text-[#FFFFFF] rounded-[8px] font-open-sans text-sm w-20 '>{booking.status}</p>
+                        </div>
+                        {
+                            role === 'Become a Pro' && (
+                                <div className='flex gap-2 mt-2'>
+                                    <TealOutLineBtn text="Reject"/>
+                                    <TealBtn text="Accept" />
+                                </div>
+                            )
+                        }
 
                     </div>
                 )}
@@ -54,12 +75,16 @@ export default function BookingCard({ booking }) {
                         <div className=' flex justify-center md:justify-end'>
                             <p className='text-center bg-[#FF26001A] py-1 text-[#FF2600] rounded-[8px] font-open-sans text-sm w-20 '>{booking.status}</p>
                         </div>
-                        <TealBtn text="Reschedule" />
+                       {
+                            role === 'Client' && (
+                                 <TealBtn text="Reschedule" />
+                            )
+                       }
                     </div>
                 )}
                 {booking.status === 'completed' && (
                     <div>
-                            <p className='text-center bg-[#00FF5133] py-1 text-[#1f7a33] rounded-[8px] font-open-sans text-sm w-20 '>{booking.status}</p>
+                        <p className='text-center bg-[#00FF5133] py-1 text-[#1f7a33] rounded-[8px] font-open-sans text-sm w-20 '>{booking.status}</p>
 
                     </div>
                 )}
