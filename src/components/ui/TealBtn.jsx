@@ -45,11 +45,11 @@ export default function TealBtn({ text, onClick = () => {}, icon = null }) {
         /* default (sm and up) */
         :global(.gold-btn .ant-btn) {
           font-size: 18px;
-          height: 46px;
+          height: 50px;
           line-height: 32px;
         }
         /* mobile only */
-        @media (max-width: 1023px) {
+        @media (max-width: 767px) {
           :global(.gold-btn .ant-btn) {
             font-size: 14px;
             height: 38px;

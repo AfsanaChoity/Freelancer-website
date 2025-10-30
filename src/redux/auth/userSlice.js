@@ -18,6 +18,7 @@ export const userSlice = createSlice({
 
     createUser: (state, action) => {
         state.role = action.payload;
+        // state.role = null;
     },
 
     loginUser:(state, action) => {

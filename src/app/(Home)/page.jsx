@@ -26,7 +26,7 @@ export default function HomePage() {
   return (
     <div>
       {
-        !user && (
+        (!user) && (
           <div>
             {/* <Banner /> */}
             <BannerHero onSearch={handleSearch} />
@@ -80,6 +80,13 @@ export default function HomePage() {
          
         )
       }
+     {
+      (user || role) && (
+        <CustomContainer>
+
+        </CustomContainer>
+      )
+     }
 
     </div>
   )

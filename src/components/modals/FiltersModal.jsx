@@ -22,6 +22,7 @@ export default function FiltersModal({ open, onClose, onApply }) {
   const [selected, setSelected] = useState(['Finance & Accounting']);
   const [online, setOnline] = useState(false);
   const [topRated, setTopRated] = useState(false);
+  const [inPerson, setInPerson] = useState(false);
 
   const canApply = useMemo(() => true, [min, max, selected, online, topRated]);
 
@@ -143,8 +144,8 @@ export default function FiltersModal({ open, onClose, onApply }) {
 
              <label className="inline-flex items-center gap-2 text-[14px] text-gray-700">
               <Checkbox
-                checked={online}
-                onChange={(e) => setOnline(e.target.checked)}
+                checked={inPerson}
+                onChange={(e) => setInPerson(e.target.checked)}
                 className="custom-green-checkbox"
               />
               In Person

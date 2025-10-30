@@ -22,7 +22,7 @@ import RatingReviewsSection from '@/components/features/Professiona-details/Rati
 import Link from 'node_modules/next/link'
 import VerifiedDot from '@/components/ui/VerifiedDot'
 import { Divider } from 'node_modules/antd/es/index'
-import skills from '@/assets/icons/skills.svg'
+import skills from '@/assets/icons/skills.png'
 
 
 
@@ -108,7 +108,7 @@ export default function FreelancerDetailsPage({ params }) {
                         {
                             lists.map((list) => (
                                 <li className='flex gap-2 items-center'>
-                                    <Image src={list.icon} alt='icon' className="w-7 h-7"/>
+                                    <Image src={list.icon} alt='icon' className="w-7 h-7 object-cover"/>
                                     <Paragraph text={list.text} />
                                 </li>
                             ))

@@ -72,7 +72,9 @@ export default function Header() {
 
           {/* logo  */}
           <div className=''>
+            <Link href="/">
             <Image src={logo} alt="logo" />
+            </Link>
           </div>
 
           {/* search field */}

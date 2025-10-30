@@ -86,9 +86,16 @@ export default function RateReviewModal({ visible, onCancel, onSubmit }) {
           Share your experience to help others make informed choices
         </p>
 
-        <Form layout="vertical" form={form}>
+        <Form layout="vertical" form={form}
+        requiredMark={false}
+        >
           {/* What did you like the most? */}
-          <Form.Item label="What did you like the most?" name="whatLiked">
+          <Form.Item 
+          label="What did you like the most?" 
+          name="whatLiked"
+          
+          rules={[{ required: true, message: "Please select at least one option" }]}
+          >
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                 {likeOptions.map((opt) => (
@@ -119,6 +126,7 @@ export default function RateReviewModal({ visible, onCancel, onSubmit }) {
           <Form.Item
             label="Is there anything we could improve?"
             name="whatImprove"
+            rules={[{ required: true, message: "Please select at least one option" }]}
           >
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
@@ -139,6 +147,7 @@ export default function RateReviewModal({ visible, onCancel, onSubmit }) {
                 size="large"
                 placeholder="Other"
                 name="otherImprove"
+                // rules={[{ required: false }]}
                 onChange={(e) =>
                   form.setFieldsValue({ otherImprove: e.target.value })
                 }
@@ -163,7 +172,8 @@ export default function RateReviewModal({ visible, onCancel, onSubmit }) {
           </Form.Item>
 
           {/* How was your experience? */}
-          <Form.Item label="How was your experience?" name="feedback">
+          <Form.Item label="How was your experience?" name="feedback"
+            rules={[{ required: true, message: "Please provide your feedback" }]}>
             <TextArea
               rows={6}
               placeholder="Add Feedback...."

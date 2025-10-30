@@ -16,7 +16,9 @@ export default function Footer() {
                 <div className='  flex flex-col md:flex-row gap-8 md:justify-between   '>
                     {/* 1st col */}
                     <div className=' flex flex-col items-center md:items-start  gap-4 '>
+                       <Link href="/">
                         <Image src={logo} alt="logo" />
+                       </Link>
 
                         <p className='font-poppins text-gray-400 text-xs lg:text-sm max-w-[294px] text-center md:text-justify'>
                             This platform is a digital home for preserving family legacy, celebrating Black history, and strengthening connections across generations. It offers a secure space for family members to explore historical timelines, share personal stories, access family trees, and pass down traditions

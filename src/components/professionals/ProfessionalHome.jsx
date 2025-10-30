@@ -16,6 +16,7 @@ import AddEditProjectModal from '../modals/AddEditProjectModal'
 import img2 from '@/assets/image/freelancer/portfolio.jpg'
 import PortfolioCard from '../shared/PortfolioCard'
 import Heading from '../ui/Heading'
+import Link from 'node_modules/next/link'
 
 
 const items = [
@@ -220,7 +221,9 @@ export default function ProfessionalHome() {
                     <p className="text-gray-400 text-opacity-100 text-lg mb-8">
                         Get verified and boost your visibility to attract more clients today.
                     </p>
+                   <Link href="/profile/verify-account">
                    <TealBtn text="Verify Now"/>
+                   </Link>
                 </div>
             </div>
         </>
