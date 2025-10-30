@@ -80,13 +80,7 @@ export default function HomePage() {
          
         )
       }
-     {
-      (user || role) && (
-        <CustomContainer>
-
-        </CustomContainer>
-      )
-     }
+    
 
     </div>
   )
