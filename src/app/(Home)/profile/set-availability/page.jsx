@@ -8,6 +8,7 @@ import { Divider } from 'antd';
 import SubHeadingBlack from '@/components/ui/SubHeadingBlack';
 import { Form, Input, Switch } from 'antd';
 import TealBtn from '@/components/ui/TealBtn';
+import "@/styles/AntSwitch.css"
 
 export default function SetAvailabilityPage() {
     const [form] = Form.useForm();
