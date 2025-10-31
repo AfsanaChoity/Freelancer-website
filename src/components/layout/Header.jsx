@@ -21,6 +21,7 @@ import { MobileMenuItems } from '@/lib/MobileMenuItems';
 import { useRouter } from 'next/navigation';
 import { logoutUser } from '@/redux/auth/userSlice';
 import CustomSearch from '../ui/CustomSearch';
+import LanguageDropdown from '../ui/LanguageDropdown';
 
 
 
@@ -131,7 +132,7 @@ export default function Header() {
             {/* Button */}
             {
               user ? (
-                <div className='flex items-center gap-2'>
+                <div className='flex items-center gap-2 '>
                   <Link href="/profile"><Avatar size={{ xs: 48, sm: 48, md: 50, lg: 64, xl: 70, xxl: 74 }} src={userImg.src} /></Link>
                   <div className='hidden md:block'>
                     <ProfileDropdown />
@@ -155,24 +156,25 @@ export default function Header() {
                 </div>
               ) : (
                 <div className='flex gap-2 lg:gap-4 items-center '>
-                  {/* <Link href='/sign-in' className='hidden md:block'>
-                    <TealOutLineBtn text="Sign in" />
-                  </Link> */}
+                  
 
                    <Link href='/sign-in' className="hidden md:block  border border-[#144A6C] text-[#144A6C] font-open-sans font-semibold px-3 py-1 md:px-8 md:py-2 rounded-[8px]">
                     Sign in
                   </Link>
 
-                  <Link href='/sign-up' className="bg-[#144A6C] text-white font-open-sans font-semibold px-3 py-1 md:px-8 md:py-2 rounded-[8px]">
+                  <Link href='/sign-up' className="hidden md:block bg-[#144A6C] text-white font-open-sans font-semibold px-3 py-1 md:px-8 md:py-2 rounded-[8px]">
                     Join
                   </Link>
-                  {/* <TealBtn text="Join"/> */}
+                  
 
                 </div>
               )
             }
-            <div className='hidden xl:block'>
-              <Image src={icon} alt="icon" />
+
+            <div className='flex items-center gap-1'>
+              {/* Language button */}
+            <div className=''>
+              <LanguageDropdown />
             </div>
 
             {/* mobile hamburger */}
@@ -197,6 +199,7 @@ export default function Header() {
                 </button>
               </Dropdown>
 
+            </div>
             </div>
           </div>
 
